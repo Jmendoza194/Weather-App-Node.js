@@ -8,6 +8,9 @@ const forecast = require('./utils/forecast')
 // this is what initializes express
 const app = express()
 
+//Gets environment variable from heroku, or 3000 if it fails
+const port = process.env.PORT || 3000
+
 //Gives us the local path to directory and file name
 // console.log(__dirname)
 // console.log(__filename)
@@ -110,6 +113,6 @@ app.get('*', (req, res) =>{
 })
 
 //Need to start server up
-app.listen(3000, () =>{
+app.listen(port, () =>{
   console.log('Server is up on port 3000')
 })
